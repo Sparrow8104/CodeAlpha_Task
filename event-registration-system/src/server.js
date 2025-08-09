@@ -13,8 +13,12 @@ app.use(cors());
 app.use(express.json());
 
 const eventRoutes = require('./routes/eventRoutes');
-app.use('/events', eventRoutes);
+const userRoutes = require('./routes/userRoutes');
+const registrationRoutes = require('./routes/registrationROutes');
 
+app.use('/events', eventRoutes);
+app.use('/users', userRoutes);
+app.use('/registrations', registrationRoutes);
 
 app.get('/', (req, res) => res.send('Event Registration System API running'));
 
