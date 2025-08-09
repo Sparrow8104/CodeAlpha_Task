@@ -21,4 +21,5 @@ const connectDB = require('./config/index');
 connectDB();
 const urlRoutes = require('./routes/urlRoutes');
 app.use('/', urlRoutes);
+app.use(express.static('src/public'));
 
