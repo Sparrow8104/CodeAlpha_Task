@@ -19,4 +19,6 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 const connectDB = require('./config/index');
 connectDB();
+const urlRoutes = require('./routes/urlRoutes');
+app.use('/', urlRoutes);
 
