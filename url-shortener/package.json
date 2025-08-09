@@ -4,7 +4,8 @@
   "description": "A simple project that shortens URLs and redirects to the original links.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +17,7 @@
     "express-rate-limit": "^8.0.1",
     "mongoose": "^8.17.1",
     "morgan": "^1.10.1",
-    "nanoid": "^5.1.5"
+    "nanoid": "^3.3.4"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
