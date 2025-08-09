@@ -1,0 +1,15 @@
+version: "3"
+services:
+  url-shortener:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/urlshortener
+      - BASE_URL=http://localhost:5000
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
