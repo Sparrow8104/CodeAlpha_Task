@@ -6,19 +6,19 @@ exports.registerForEvent = async (req, res) => {
   try {
     const { userId, eventId } = req.body;
 
-    // Check if user exists
+   
     const user = await User.findById(userId);
     if (!user) return res.status(404).json({ error: 'User not found' });
 
-    // Check if event exists
+    
     const event = await Event.findById(eventId);
     if (!event) return res.status(404).json({ error: 'Event not found' });
 
-    // Check for duplicate registration
+
     const existingRegistration = await Registration.findOne({ user: userId, event: eventId, status: 'registered' });
     if (existingRegistration) return res.status(400).json({ error: 'User already registered for this event' });
 
-    // Create registration
+
     const registration = new Registration({ user: userId, event: eventId });
     await registration.save();
 
